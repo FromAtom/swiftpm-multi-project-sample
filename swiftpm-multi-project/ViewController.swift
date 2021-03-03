@@ -6,12 +6,18 @@
 //
 
 import UIKit
+import APIClient
+import APIKit
 
 class ViewController: UIViewController {
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		// Do any additional setup after loading the view.
+
+		let request = APIRequest()
+		Session.send(request) { response in
+			print(response)
+		}
 	}
 
 

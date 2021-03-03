@@ -3,10 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DC67797025EFBD6A00B0DB51 /* APIClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC67796F25EFBD6A00B0DB51 /* APIClient.framework */; };
+		DC67797125EFBD6A00B0DB51 /* APIClient.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DC67796F25EFBD6A00B0DB51 /* APIClient.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DC67797525EFBDD700B0DB51 /* APIKit in Frameworks */ = {isa = PBXBuildFile; productRef = DC67797425EFBDD700B0DB51 /* APIKit */; };
 		DCFA7CC525EFBB69002A07ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFA7CC425EFBB69002A07ED /* AppDelegate.swift */; };
 		DCFA7CC725EFBB69002A07ED /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFA7CC625EFBB69002A07ED /* SceneDelegate.swift */; };
 		DCFA7CC925EFBB69002A07ED /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFA7CC825EFBB69002A07ED /* ViewController.swift */; };
@@ -15,7 +18,22 @@
 		DCFA7CD125EFBB69002A07ED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCFA7CCF25EFBB69002A07ED /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		DC67797225EFBD6A00B0DB51 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				DC67797125EFBD6A00B0DB51 /* APIClient.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		DC67796F25EFBD6A00B0DB51 /* APIClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = APIClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCFA7CC125EFBB69002A07ED /* swiftpm-multi-project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "swiftpm-multi-project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCFA7CC425EFBB69002A07ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DCFA7CC625EFBB69002A07ED /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -31,17 +49,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC67797525EFBDD700B0DB51 /* APIKit in Frameworks */,
+				DC67797025EFBD6A00B0DB51 /* APIClient.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DC67796E25EFBD6A00B0DB51 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DC67796F25EFBD6A00B0DB51 /* APIClient.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		DCFA7CB825EFBB69002A07ED = {
 			isa = PBXGroup;
 			children = (
 				DCFA7CC325EFBB69002A07ED /* swiftpm-multi-project */,
 				DCFA7CC225EFBB69002A07ED /* Products */,
+				DC67796E25EFBD6A00B0DB51 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -77,12 +106,16 @@
 				DCFA7CBD25EFBB69002A07ED /* Sources */,
 				DCFA7CBE25EFBB69002A07ED /* Frameworks */,
 				DCFA7CBF25EFBB69002A07ED /* Resources */,
+				DC67797225EFBD6A00B0DB51 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = "swiftpm-multi-project";
+			packageProductDependencies = (
+				DC67797425EFBDD700B0DB51 /* APIKit */,
+			);
 			productName = "swiftpm-multi-project";
 			productReference = DCFA7CC125EFBB69002A07ED /* swiftpm-multi-project.app */;
 			productType = "com.apple.product-type.application";
@@ -110,6 +143,9 @@
 				Base,
 			);
 			mainGroup = DCFA7CB825EFBB69002A07ED;
+			packageReferences = (
+				DC67797325EFBDD700B0DB51 /* XCRemoteSwiftPackageReference "APIKit" */,
+			);
 			productRefGroup = DCFA7CC225EFBB69002A07ED /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -339,6 +375,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		DC67797325EFBDD700B0DB51 /* XCRemoteSwiftPackageReference "APIKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ishkawa/APIKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.2.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DC67797425EFBDD700B0DB51 /* APIKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DC67797325EFBDD700B0DB51 /* XCRemoteSwiftPackageReference "APIKit" */;
+			productName = APIKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = DCFA7CB925EFBB69002A07ED /* Project object */;
 }
